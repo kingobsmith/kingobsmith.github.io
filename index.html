@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,6 +195,20 @@
 
   /* ABOUT */
   .about { background: var(--parchment); }
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-photo {
+    width: 100%;
+    border-radius: 3px;
+    display: block;
+  }
+  @media (max-width: 700px) {
+    .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
   .about h2 {
     font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     font-weight: normal;
@@ -543,13 +558,20 @@
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
-    <span class="section-label">The Candidate</span>
-    <div class="rule-gold"></div>
-    <h2>A man shaped by faith,<br>called to serve Stonecrest.</h2>
-    <p>King Otis Bernard Smith Jr. is the Founder and Chairman of The Wise Men Group — a multi-venture, Kingdom-focused enterprise spanning community development, sports, media, faith technology, and leadership training. He has spent decades building institutions that serve people, not profit.</p>
-    <p>Raised in a family grounded in faith, education, and excellence, King carries a deep conviction that cities thrive when their leaders govern with integrity and their institutions — especially the church — are empowered, not sidelined.</p>
-    <p>Stonecrest is a young city with an old calling. King Smith intends to answer it.</p>
-    <p>Running under The Wise Men Group party banner — registered with the Federal Election Commission — this campaign is not built on a political machine. It is built on a mission.</p>
+    <div class="about-inner">
+      <div>
+        <span class="section-label">The Candidate</span>
+        <div class="rule-gold"></div>
+        <h2>A man shaped by faith,<br>called to serve Stonecrest.</h2>
+        <p>King Otis Bernard Smith Jr. is the Founder and Chairman of The Wise Men Group — a multi-venture, Kingdom-focused enterprise spanning community development, sports, media, faith technology, and leadership training. He has spent decades building institutions that serve people, not profit.</p>
+        <p>Raised in a family grounded in faith, education, and excellence, King carries a deep conviction that cities thrive when their leaders govern with integrity and their institutions — especially the church — are empowered, not sidelined.</p>
+        <p>Stonecrest is a young city with an old calling. King Smith intends to answer it.</p>
+        <p>Running under The Wise Men Group party banner — registered with the Federal Election Commission — this campaign is not built on a political machine. It is built on a mission.</p>
+      </div>
+      <div>
+        <img src="king.jpg" alt="King Otis Bernard Smith Jr." class="about-photo">
+      </div>
+    </div>
   </div>
 </section>
 

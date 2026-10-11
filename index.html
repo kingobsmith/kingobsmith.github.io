@@ -547,6 +547,74 @@
   }
   .float-vision:hover { background: var(--gold-lt); }
 
+  /* MUSIC — THE PROOF */
+  .proof-player {
+    position: fixed; right: 1rem; bottom: 1rem; z-index: 900;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem;
+  }
+  .proof-label {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-lt); background: rgba(13,27,42,0.85);
+    padding: 0.25rem 0.6rem; border-radius: 999px;
+  }
+  .proof-btn {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: var(--navy); color: var(--white);
+    border: 2px solid var(--gold); border-radius: 999px;
+    padding: 0.45rem 1rem 0.45rem 0.45rem; cursor: pointer;
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.82rem; font-weight: 600; text-align: left;
+    animation: proofPulse 2s ease-out infinite;
+  }
+  .proof-btn:nth-of-type(2) { animation-delay: 0.66s; }
+  .proof-btn:nth-of-type(3) { animation-delay: 1.33s; }
+  .proof-btn:hover { border-color: var(--gold-lt); }
+  .proof-icon {
+    width: 32px; height: 32px; flex: none; border-radius: 50%;
+    background: var(--gold); color: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .proof-icon svg { width: 14px; height: 14px; fill: currentColor; }
+  .proof-btn .pause-i { display: none; }
+  .proof-btn.playing .play-i { display: none; }
+  .proof-btn.playing .pause-i { display: block; }
+  .proof-btn.playing { background: var(--gold); color: var(--navy); animation-duration: 1s; }
+  .proof-btn.playing .proof-icon { background: var(--navy); color: var(--gold-lt); }
+  @keyframes proofPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(212,175,106,0.7); }
+    70%  { box-shadow: 0 0 0 14px rgba(212,175,106,0); }
+    100% { box-shadow: 0 0 0 0 rgba(212,175,106,0); }
+  }
+  .proof-songs { display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; }
+  .proof-toggle { display: none; }
+  .proof-buy {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em;
+    color: var(--gold-lt); text-decoration: none;
+    background: rgba(13,27,42,0.9); border: 1px solid rgba(212,175,106,0.5);
+    padding: 0.45rem 0.9rem; border-radius: 999px;
+  }
+  .proof-buy:hover { color: var(--navy); background: var(--gold-lt); }
+  @media (max-width: 600px) {
+    .proof-label { display: none; }
+    .proof-songs { display: none; }
+    .proof-player.open .proof-songs { display: flex; }
+    .proof-btn { font-size: 0.75rem; background: var(--navy); }
+    .proof-toggle {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: var(--navy);
+      border: none; border-radius: 999px; cursor: pointer;
+      padding: 0.8rem 1.1rem;
+      font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em;
+      animation: proofPulse 2s ease-out infinite;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .proof-btn { animation: none; }
+  }
+
   /* CROSS SVG inline */
   .cross-svg { fill: var(--gold-lt); }
 </style>
@@ -906,6 +974,58 @@
 </script>
 
 <a href="/zion/" class="float-vision">See My Vision &rarr;</a>
+
+<!-- MUSIC — THE PROOF -->
+<div class="proof-player" aria-label="Music by The Proof">
+  <span class="proof-label">Hear The Proof</span>
+  <div class="proof-songs" id="proof-songs">
+  <button class="proof-btn" type="button" data-src="/music/the-prophecy.mp3" aria-label="Play The Prophecy">
+    <span class="proof-icon"><svg class="play-i" viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z"/></svg><svg class="pause-i" viewBox="0 0 14 14"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z"/></svg></span>
+    The Prophecy
+  </button>
+  <button class="proof-btn" type="button" data-src="/music/letter-to-trump-maga-friends.mp3" aria-label="Play Letter to Trump &amp; MAGA Friends">
+    <span class="proof-icon"><svg class="play-i" viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z"/></svg><svg class="pause-i" viewBox="0 0 14 14"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z"/></svg></span>
+    Letter to Trump &amp; MAGA Friends
+  </button>
+  <button class="proof-btn" type="button" data-src="/music/i-am-the-proof.mp3" aria-label="Play I Am The Proof">
+    <span class="proof-icon"><svg class="play-i" viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z"/></svg><svg class="pause-i" viewBox="0 0 14 14"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z"/></svg></span>
+    I Am The Proof
+  </button>
+  <a class="proof-buy" href="https://robbinhoodent.com" target="_blank" rel="noopener">Buy the Album &middot; Robbin Hood Entertainment &rarr;</a>
+  </div>
+  <button class="proof-toggle" type="button" aria-expanded="false" aria-controls="proof-songs">&#9835; Hear The Proof</button>
+</div>
+<script>
+  (function () {
+    const audio = new Audio();
+    audio.preload = 'none';
+    const buttons = document.querySelectorAll('.proof-btn');
+    let current = null;
+    const player = document.querySelector('.proof-player');
+    const toggle = document.querySelector('.proof-toggle');
+    toggle.addEventListener('click', () => {
+      const open = player.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.innerHTML = open ? '&times; Close' : '&#9835; Hear The Proof';
+    });
+    function reset() { buttons.forEach(b => b.classList.remove('playing')); }
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (current === btn && !audio.paused) { audio.pause(); reset(); return; }
+        if (current !== btn) { audio.src = btn.dataset.src; current = btn; }
+        reset();
+        btn.classList.add('playing');
+        audio.play().catch(() => reset());
+      });
+    });
+    audio.addEventListener('ended', () => {
+      // play the next song in the set
+      const list = Array.from(buttons);
+      const next = list[(list.indexOf(current) + 1) % list.length];
+      next.click();
+    });
+  })();
+</script>
 
 </body>
 </html>

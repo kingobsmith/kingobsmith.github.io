@@ -149,6 +149,22 @@ section{padding-block:clamp(56px,9vw,104px)}
 .vote-rules b{font-family:var(--display);font-size:1.1rem}
 .vote-rules span{color:var(--muted);font-size:.93rem}
 
+/* Finalist spotlight */
+.spotlight{margin-top:44px;border:1px solid var(--brass);border-radius:8px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--night)}
+@media (max-width:760px){.spotlight{grid-template-columns:1fr}}
+.spot-person{background:radial-gradient(circle at 50% 30%,rgba(217,164,65,.35),transparent 60%),var(--oxblood);padding:32px 24px;display:grid;justify-items:center;align-content:center;gap:12px;text-align:center}
+.spot-photo{width:132px;height:132px;border-radius:50%;border:3px solid var(--brass-soft);background:var(--night-2);display:grid;place-items:center;font-family:var(--display);font-size:2.6rem;color:var(--brass-soft);box-shadow:0 0 30px rgba(217,164,65,.45)}
+.spot-person .who{font-family:var(--display);font-size:1.4rem}
+.spot-person .from{font-size:.92rem;color:#ecd9d3}
+.spot-show{padding:28px clamp(20px,3vw,36px);display:grid;gap:14px;align-content:start}
+.spot-show h3{font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--brass-soft)}
+.spot-show .pitch{font-family:var(--display);font-style:italic;font-size:1.15rem}
+.spot-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;border-top:1px solid var(--line);padding-top:16px}
+.spot-details div{display:grid;gap:4px;min-width:0}
+.spot-details b{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:500}
+.spot-details span{color:var(--muted);font-size:.95rem}
+.example-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;background:var(--night);color:var(--brass-soft);border:1px solid var(--brass);border-radius:999px;padding:4px 10px}
+
 footer{padding-block:40px;color:var(--muted);font-size:.88rem}
 footer .wrap{display:grid;gap:10px}
 footer b{color:var(--ivory)}
@@ -410,6 +426,25 @@ footer b{color:var(--ivory)}
         <a class="btn" id="submit-link" href="SUBMIT_FORM_URL_HERE" target="_blank" rel="noopener">Submit your show idea</a>
         <span style="color:var(--muted)">Voting opens when the finalists are posted.</span>
       </div>
+
+      <p class="eyebrow" style="margin-top:48px">How every finalist will be featured</p>
+      <article class="spotlight" aria-label="Example finalist spotlight">
+        <div class="spot-person">
+          <span class="example-tag">Example</span>
+          <div class="spot-photo" aria-hidden="true">You</div>
+          <div class="who">Your Name Here</div>
+          <div class="from">Your church or neighborhood</div>
+        </div>
+        <div class="spot-show">
+          <h3>Your Show's Title</h3>
+          <p class="pitch">Your big idea, told in one sentence that makes people want to watch.</p>
+          <div class="spot-details">
+            <div><b>How it's played</b><span>The rounds, the rules, and the moment someone wins.</span></div>
+            <div><b>Who competes</b><span>Families, kids, churches, celebrities, or anyone you dream up.</span></div>
+            <div><b>The prize</b><span>What the winners take home.</span></div>
+          </div>
+        </div>
+      </article>
       <p class="eyebrow" style="margin-top:48px">Need inspiration? Six starter ideas</p>
       <div class="ballot" style="margin-top:16px">
         <div class="ballot-card"><span class="num">Show 1</span><h3>Know Your Word</h3><span class="fmt">Scripture trivia</span><p>Families race through Bible questions for scholarships and home down-payment grants.</p></div>

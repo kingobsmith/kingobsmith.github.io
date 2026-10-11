@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Zion's Black Wall Street: King Smith's vision for Stonecrest, an entertainment district across from The Mall at Stonecrest.">
+<title>Zion's Black Wall Street</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0}
+/* Layout: a nighttime marquee district — oxblood and brass on a deep night sky, one long scroll from vision to invitation */
+:root{
+  --night:#120d14;
+  --night-2:#1c1420;
+  --oxblood:#5e1a2a;
+  --brass:#d9a441;
+  --brass-soft:#f1d18a;
+  --ivory:#f6efe3;
+  --muted:#b9aab6;
+  --line:#3a2b3a;
+  --display:"Bodoni Moda", "Didot", "Times New Roman", serif;
+  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono:"DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ivory);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+a{color:var(--brass-soft)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,4.6vw,3.25rem)}
+h3{font-size:1.45rem}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+.lede{font-size:1.2rem;color:var(--muted);max-width:62ch}
+section{padding-block:clamp(56px,9vw,104px)}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent);opacity:.45;border:0;margin:0}
+
+/* Top bar */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(18,13,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.02em}
+.brand span{color:var(--brass)}
+.topbar nav{display:flex;gap:18px;flex-wrap:wrap}
+.topbar nav a{color:var(--muted);text-decoration:none;font-size:.92rem}
+.topbar nav a:hover{color:var(--ivory)}
+@media (max-width:720px){.topbar nav{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brass);color:var(--night);font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;border:0;font-family:var(--body);font-size:1rem;cursor:pointer}
+.btn:hover{background:var(--brass-soft)}
+.btn.ghost{background:transparent;color:var(--ivory);border:1px solid var(--brass)}
+
+/* Hero */
+.hero{padding-block:48px 0}
+.hero .scripture{font-family:var(--display);font-style:italic;color:var(--brass-soft);font-size:1.1rem;max-width:52ch}
+.hero h1{font-size:clamp(2.8rem,8.5vw,6.2rem);margin-block:14px 18px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--brass)}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.render{margin-top:40px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--night-2)}
+.render svg{display:block;width:100%;height:auto}
+.caption{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--muted);padding:10px 14px;border-top:1px solid var(--line)}
+
+/* Facts strip */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.fact{background:var(--night);padding:22px}
+.fact b{display:block;font-family:var(--display);font-size:2rem;color:var(--brass-soft);line-height:1.1}
+.fact span{color:var(--muted);font-size:.95rem}
+
+/* Two-col */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.split > *{min-width:0}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.stack{display:grid;gap:18px}
+
+/* Anchors */
+.anchors{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+@media (max-width:900px){.anchors{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.anchors{grid-template-columns:1fr}}
+.anchor{border-top:2px solid var(--brass);padding-top:16px;display:grid;gap:8px;align-content:start}
+.anchor .tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+.anchor p{color:var(--muted);font-size:.98rem}
+
+/* Kids band */
+.kids{background:var(--oxblood);position:relative;overflow:hidden}
+.kids::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(217,164,65,.28),transparent 45%);pointer-events:none}
+.kids .wrap{position:relative}
+.kids .lede{color:#ecd9d3}
+.marquee-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+.marquee{background:rgba(18,13,20,.55);border:1px solid rgba(241,209,138,.35);border-radius:6px;padding:20px;display:grid;gap:8px}
+.marquee .bulbs{display:flex;gap:6px}
+.marquee .bulbs i{width:7px;height:7px;border-radius:50%;background:var(--brass-soft);box-shadow:0 0 8px var(--brass)}
+.marquee h3{font-size:1.35rem}
+.marquee p{color:#ecd9d3;font-size:.97rem}
+
+/* Shows table */
+.shows{width:100%;border-collapse:collapse;margin-top:32px;font-size:.98rem}
+.table-scroll{overflow-x:auto}
+.shows th{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:1px solid var(--brass)}
+.shows td{padding:16px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--muted)}
+.shows td:first-child{font-family:var(--display);font-size:1.2rem;color:var(--ivory);white-space:nowrap}
+@media (max-width:640px){.shows td:first-child{white-space:normal}}
+
+/* Ownership */
+.own{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+@media (max-width:860px){.own{grid-template-columns:1fr}}
+.own .card{border:1px solid var(--line);border-radius:6px;padding:24px;background:var(--night-2);display:grid;gap:10px;align-content:start}
+.own .card.feature{border-color:var(--brass)}
+.own .card p{color:var(--muted)}
+
+/* Steps */
+.steps{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:0;counter-reset:step}
+.steps li{counter-increment:step;display:grid;grid-template-columns:72px 1fr;gap:20px;padding-block:22px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(step);font-family:var(--display);font-size:2.4rem;color:var(--brass);line-height:1}
+.steps li > div{min-width:0;display:grid;gap:6px}
+.steps .when{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--brass-soft)}
+.steps p{color:var(--muted)}
+
+/* Invitation */
+.invite{background:var(--night-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.invite-box{border:1px solid var(--brass);border-radius:8px;padding:clamp(24px,4vw,44px);display:grid;gap:22px}
+.asks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.asks div{display:grid;gap:6px}
+.asks b{font-family:var(--display);font-size:1.2rem}
+.asks span{color:var(--muted);font-size:.97rem}
+.contact{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.contact .chip{font-family:var(--mono);background:var(--night);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:.95rem;user-select:all}
+.copy{background:transparent;border:1px solid var(--brass);color:var(--brass-soft);border-radius:999px;padding:9px 14px;font-family:var(--body);font-size:.88rem;cursor:pointer}
+.copy:hover{background:rgba(217,164,65,.12)}
+.status{font-size:.88rem;color:var(--brass-soft);min-height:1.2em}
+
+footer{padding-block:40px;color:var(--muted);font-size:.88rem}
+footer .wrap{display:grid;gap:10px}
+footer b{color:var(--ivory)}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" style="color:var(--ivory);text-decoration:none">Smith <span>for</span> Mayor</a>
+    <nav aria-label="Sections">
+      <a href="#land">The Land</a>
+      <a href="#district">The District</a>
+      <a href="#kids">For the Kids</a>
+      <a href="#ownership">Who Owns It</a>
+      <a href="#pastors">For Pastors</a>
+    </nav>
+    <a class="btn" href="#pastors">Partner with us</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="scripture">"Write the vision, and make it plain upon tables, that he may run that readeth it." Habakkuk 2:2</p>
+      <h1>Zion's Black <em>Wall Street</em></h1>
+      <p class="lede">The empty land across from The Mall at Stonecrest becomes a district of light: original game shows, a late-night studio, a comedy club, a restaurant row, and a grand outdoor amphitheater. Built by Stonecrest, filled by our churches and creators, and owned by our community.</p>
+      <div class="actions">
+        <a class="btn" href="#pastors">Pastors: partner with us</a>
+        <a class="btn ghost" href="#district">See the district</a>
+      </div>
+
+      <figure class="render" style="margin-inline:0">
+        <svg viewBox="0 0 1200 560" role="img" aria-label="Artist's concept of Zion's Black Wall Street at night: a central plaza with a fountain, a game show hall, late-night studio, comedy club and restaurants, with a grand amphitheater at the rear">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0d0a14"/>
+              <stop offset=".55" stop-color="#2a1630"/>
+              <stop offset="1" stop-color="#5e1a2a"/>
+            </linearGradient>
+            <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+              <stop offset="0" stop-color="#f1d18a" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#f1d18a" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2b1d26"/>
+              <stop offset="1" stop-color="#120d14"/>
+            </linearGradient>
+            <linearGradient id="shell" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f6efe3"/>
+              <stop offset="1" stop-color="#b9aab6"/>
+            </linearGradient>
+          </defs>
+          <rect width="1200" height="560" fill="url(#sky)"/>
+          <g fill="#f6efe3" opacity=".7">
+            <circle cx="80" cy="50" r="1.4"/><circle cx="210" cy="90" r="1"/><circle cx="330" cy="40" r="1.6"/><circle cx="460" cy="75" r="1"/><circle cx="610" cy="30" r="1.3"/><circle cx="760" cy="65" r="1"/><circle cx="880" cy="35" r="1.5"/><circle cx="1010" cy="85" r="1"/><circle cx="1130" cy="45" r="1.3"/><circle cx="150" cy="140" r="1"/><circle cx="1060" cy="150" r="1"/><circle cx="540" cy="120" r="1"/>
+          </g>
+          <!-- Amphitheater at rear -->
+          <ellipse cx="600" cy="230" rx="330" ry="120" fill="url(#glow)"/>
+          <path d="M380 270 Q600 90 820 270 Z" fill="url(#shell)" opacity=".92"/>
+          <path d="M420 270 Q600 130 780 270 Z" fill="#2a1630"/>
+          <rect x="500" y="236" width="200" height="34" fill="#d9a441" opacity=".85"/>
+          <g fill="#f1d18a"><circle cx="530" cy="232" r="3"/><circle cx="570" cy="226" r="3"/><circle cx="630" cy="226" r="3"/><circle cx="670" cy="232" r="3"/></g>
+          <path d="M300 300 Q600 250 900 300 L920 320 Q600 268 280 320 Z" fill="#3a2b3a"/>
+          <path d="M260 330 Q600 280 940 330 L960 350 Q600 300 240 350 Z" fill="#33242f"/>
+          <!-- Ground -->
+          <rect y="350" width="1200" height="210" fill="url(#ground)"/>
+          <!-- Left buildings: Game Show Hall + Late-Night Studio -->
+          <rect x="40" y="250" width="250" height="150" fill="#1c1420" stroke="#5e1a2a" stroke-width="2"/>
+          <rect x="60" y="270" width="210" height="34" fill="#5e1a2a"/>
+          <text x="165" y="293" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#f1d18a" letter-spacing="2">GAME SHOW HALL</text>
+          <g fill="#f1d18a"><circle cx="70" cy="266" r="2.5"/><circle cx="90" cy="266" r="2.5"/><circle cx="110" cy="266" r="2.5"/><circle cx="130" cy="266" r="2.5"/><circle cx="150" cy="266" r="2.5"/><circle cx="170" cy="266" r="2.5"/><circle cx="190" cy="266" r="2.5"/><circle cx="210" cy="266" r="2.5"/><circle cx="230" cy="266" r="2.5"/><circle cx="250" cy="266" r="2.5"/></g>
+          <rect x="80" y="320" width="60" height="80" fill="#d9a441" opacity=".8"/>
+          <rect x="190" y="320" width="60" height="80" fill="#d9a441" opacity=".55"/>
+          <rect x="300" y="300" width="130" height="100" fill="#1c1420" stroke="#5e1a2a" stroke-width="2"/>
+          <rect x="312" y="312" width="106" height="26" fill="#120d14" stroke="#d9a441"/>
+          <text x="365" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#f1d18a">Late Night</text>
+          <circle cx="408" cy="352" r="5" fill="#e0565b"/>
+          <text x="365" y="380" text-anchor="middle" font-family="monospace" font-size="10" fill="#b9aab6">ON AIR</text>
+          <!-- Right buildings: Comedy Club + Restaurant Row -->
+          <rect x="770" y="300" width="130" height="100" fill="#1c1420" stroke="#5e1a2a" stroke-width="2"/>
+          <rect x="782" y="312" width="106" height="26" fill="#5e1a2a"/>
+          <text x="835" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#f1d18a" letter-spacing="1">COMEDY</text>
+          <rect x="805" y="350" width="60" height="50" fill="#d9a441" opacity=".7"/>
+          <rect x="910" y="270" width="250" height="130" fill="#1c1420" stroke="#5e1a2a" stroke-width="2"/>
+          <text x="1035" y="296" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#f1d18a" letter-spacing="2">RESTAURANT ROW</text>
+          <g fill="#d9a441" opacity=".75"><rect x="925" y="320" width="45" height="80"/><rect x="985" y="320" width="45" height="80"/><rect x="1045" y="320" width="45" height="80"/><rect x="1105" y="320" width="45" height="80"/></g>
+          <path d="M910 310 Q960 326 1010 310 Q1060 326 1110 310 Q1135 318 1160 310" fill="none" stroke="#f1d18a" stroke-width="1"/>
+          <g fill="#f1d18a"><circle cx="935" cy="318" r="2.5"/><circle cx="985" cy="322" r="2.5"/><circle cx="1035" cy="318" r="2.5"/><circle cx="1085" cy="322" r="2.5"/><circle cx="1135" cy="316" r="2.5"/></g>
+          <!-- Central plaza and fountain -->
+          <ellipse cx="600" cy="460" rx="420" ry="70" fill="#2b1d26" stroke="#3a2b3a"/>
+          <ellipse cx="600" cy="455" rx="110" ry="24" fill="#120d14" stroke="#d9a441" stroke-width="2"/>
+          <ellipse cx="600" cy="452" rx="90" ry="17" fill="#3c6f8a" opacity=".55"/>
+          <path d="M600 450 Q590 400 600 372 Q610 400 600 450" fill="#bfe3ee" opacity=".7"/>
+          <path d="M600 448 Q560 420 548 440" fill="none" stroke="#bfe3ee" stroke-width="2" opacity=".6"/>
+          <path d="M600 448 Q640 420 652 440" fill="none" stroke="#bfe3ee" stroke-width="2" opacity=".6"/>
+          <!-- Outdoor screen -->
+          <rect x="455" y="300" width="290" height="40" fill="#120d14" stroke="#d9a441"/>
+          <text x="600" y="326" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#f1d18a" letter-spacing="3">LIVE TONIGHT FROM ZION</text>
+          <!-- Crowd -->
+          <g fill="#0b080d">
+            <circle cx="200" cy="470" r="7"/><rect x="194" y="477" width="12" height="22" rx="5"/>
+            <circle cx="225" cy="474" r="5"/><rect x="221" y="479" width="9" height="16" rx="4"/>
+            <circle cx="320" cy="490" r="7"/><rect x="314" y="497" width="12" height="22" rx="5"/>
+            <circle cx="340" cy="494" r="5"/><rect x="336" y="499" width="9" height="16" rx="4"/>
+            <circle cx="430" cy="500" r="7"/><rect x="424" y="507" width="12" height="22" rx="5"/>
+            <circle cx="780" cy="498" r="7"/><rect x="774" y="505" width="12" height="22" rx="5"/>
+            <circle cx="800" cy="502" r="5"/><rect x="796" y="507" width="9" height="16" rx="4"/>
+            <circle cx="900" cy="480" r="7"/><rect x="894" y="487" width="12" height="22" rx="5"/>
+            <circle cx="1000" cy="470" r="7"/><rect x="994" y="477" width="12" height="22" rx="5"/>
+            <circle cx="1020" cy="474" r="5"/><rect x="1016" y="479" width="9" height="16" rx="4"/>
+          </g>
+          <!-- Lamp posts -->
+          <g stroke="#3a2b3a" stroke-width="3">
+            <line x1="150" y1="420" x2="150" y2="510"/><line x1="1050" y1="420" x2="1050" y2="510"/>
+          </g>
+          <circle cx="150" cy="416" r="6" fill="#f1d18a"/><circle cx="1050" cy="416" r="6" fill="#f1d18a"/>
+          <circle cx="150" cy="416" r="22" fill="url(#glow)"/><circle cx="1050" cy="416" r="22" fill="url(#glow)"/>
+        </svg>
+        <figcaption class="caption">Artist's concept illustration · Zion Studio Plaza at night, Grand Amphitheater at the rear</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="land">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">The land</p>
+        <h2>For over twenty years, this ground has waited.</h2>
+      </div>
+      <div class="stack">
+        <p class="lede">The lots directly in front of The Mall at Stonecrest along I-20 have sat empty for decades. Hotels went up with nothing to visit. Motor Mile grew up around a struggling mall. Families drive past every day on their way to spend their money somewhere else.</p>
+        <p class="lede">Zion's Black Wall Street turns that empty land into a destination. It honors the legacy of Tulsa's Greenwood District, burned in 1921, and declares Stonecrest the city that rebuilds it.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="facts">
+        <div class="fact"><b>20+ years</b><span>the site has sat vacant along I-20</span></div>
+        <div class="fact"><b>6 anchors</b><span>studios, comedy, dining, plaza and amphitheater</span></div>
+        <div class="fact"><b>8,000–12,000</b><span>planned amphitheater capacity, seats and lawn</span></div>
+        <div class="fact"><b>100% original</b><span>shows created and owned by our community</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="district">
+    <div class="wrap">
+      <p class="eyebrow">The district</p>
+      <h2>Six anchors. One walkable plaza.</h2>
+      <p class="lede" style="margin-top:16px">Watch a taping, eat dinner, catch a late show, and stay for a concert, all without moving the car.</p>
+
+      <figure class="render" style="margin-inline:0">
+        <svg viewBox="0 0 1200 620" role="img" aria-label="Concept site plan: I-20 and The Mall at Stonecrest at the front, restaurant row and studios along the sides of a central plaza, and the Grand Amphitheater at the rear">
+          <rect width="1200" height="620" fill="#1c1420"/>
+          <!-- Amphitheater rear -->
+          <path d="M360 170 A240 140 0 0 1 840 170 Z" fill="#2a1630" stroke="#d9a441" stroke-width="2"/>
+          <path d="M430 170 A170 95 0 0 1 770 170" fill="none" stroke="#5e1a2a" stroke-width="10"/>
+          <path d="M490 170 A110 60 0 0 1 710 170" fill="none" stroke="#5e1a2a" stroke-width="10"/>
+          <rect x="540" y="150" width="120" height="22" fill="#d9a441"/>
+          <text x="600" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#f1d18a">Grand Amphitheater</text>
+          <text x="600" y="94" text-anchor="middle" font-family="monospace" font-size="13" fill="#b9aab6">8,000–12,000 · seats + terraced lawn</text>
+          <!-- Studios left -->
+          <rect x="80" y="210" width="260" height="140" rx="4" fill="#5e1a2a"/>
+          <text x="210" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#f6efe3">Game Show Hall</text>
+          <text x="210" y="296" text-anchor="middle" font-family="monospace" font-size="12" fill="#f1d18a">2 soundstages · 300–500 seats each</text>
+          <rect x="80" y="370" width="260" height="100" rx="4" fill="#3a2b3a" stroke="#d9a441"/>
+          <text x="210" y="415" text-anchor="middle" font-family="Georgia, serif" font-size="19" font-weight="700" fill="#f6efe3">Late-Night Studio</text>
+          <text x="210" y="438" text-anchor="middle" font-family="monospace" font-size="12" fill="#f1d18a">250 seats · media hub</text>
+          <!-- Right side -->
+          <rect x="860" y="210" width="260" height="100" rx="4" fill="#3a2b3a" stroke="#d9a441"/>
+          <text x="990" y="255" text-anchor="middle" font-family="Georgia, serif" font-size="19" font-weight="700" fill="#f6efe3">Comedy Club</text>
+          <text x="990" y="278" text-anchor="middle" font-family="monospace" font-size="12" fill="#f1d18a">300 seats</text>
+          <rect x="860" y="330" width="260" height="140" rx="4" fill="#5e1a2a"/>
+          <text x="990" y="392" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#f6efe3">Restaurant Row</text>
+          <text x="990" y="416" text-anchor="middle" font-family="monospace" font-size="12" fill="#f1d18a">6–10 local restaurants</text>
+          <!-- Plaza -->
+          <ellipse cx="600" cy="340" rx="220" ry="110" fill="#2b1d26" stroke="#d9a441" stroke-dasharray="6 6"/>
+          <circle cx="600" cy="340" r="34" fill="#3c6f8a" opacity=".7" stroke="#bfe3ee"/>
+          <text x="600" y="400" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#f1d18a">Central Plaza</text>
+          <text x="600" y="422" text-anchor="middle" font-family="monospace" font-size="12" fill="#b9aab6">fountain · outdoor screen · free</text>
+          <!-- Walkways -->
+          <g stroke="#b9aab6" stroke-width="2" stroke-dasharray="3 7" opacity=".6">
+            <line x1="340" y1="300" x2="385" y2="320"/><line x1="815" y1="320" x2="860" y2="290"/>
+            <line x1="600" y1="230" x2="600" y2="175"/><line x1="600" y1="450" x2="600" y2="500"/>
+          </g>
+          <!-- Parking + I-20 -->
+          <rect x="80" y="495" width="1040" height="40" rx="4" fill="#2b1d26"/>
+          <text x="600" y="521" text-anchor="middle" font-family="monospace" font-size="13" fill="#b9aab6">STRUCTURED PARKING · MAIN ENTRANCE</text>
+          <rect x="0" y="555" width="1200" height="30" fill="#0b080d"/>
+          <line x1="0" y1="570" x2="1200" y2="570" stroke="#d9a441" stroke-width="2" stroke-dasharray="24 18"/>
+          <text x="40" y="575" font-family="monospace" font-size="13" fill="#f1d18a">I-20</text>
+          <text x="600" y="608" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-style="italic" fill="#b9aab6">The Mall at Stonecrest, across the way</text>
+        </svg>
+        <figcaption class="caption">Concept site plan · not to scale · layout for illustration only</figcaption>
+      </figure>
+
+      <div class="anchors">
+        <div class="anchor"><span class="tag">Anchor</span><h3>Game Show Hall</h3><p>Two soundstages with live studio audiences of 300 to 500 each. Families come to watch, and families come to compete.</p></div>
+        <div class="anchor"><span class="tag">Anchor</span><h3>Late-Night Studio</h3><p>A broadcast-ready studio with a 250-seat audience and a band stage for a nightly talk and variety show. It doubles as a home for church media, interviews and podcasts.</p></div>
+        <div class="anchor"><span class="tag">Anchor</span><h3>Comedy Club</h3><p>A 300-seat room for clean, family-friendly comedy, open mics and touring headliners. A date night you can tell your pastor about.</p></div>
+        <div class="anchor"><span class="tag">Anchor</span><h3>Restaurant Row</h3><p>Six to ten restaurants, with first priority to Black-owned and Stonecrest-owned operators. Lunch for the Mall crowd, dinner before the show.</p></div>
+        <div class="anchor"><span class="tag">Anchor</span><h3>Central Plaza</h3><p>A fountain, an outdoor screen showing live tapings, and a stage for pop-up performances and seasonal markets. Free for everyone, every day.</p></div>
+        <div class="anchor"><span class="tag">Anchor</span><h3>Grand Amphitheater</h3><p>A huge open-air amphitheater at the rear of the complex. Concerts, gospel festivals, citywide worship nights, orchestra, comedy specials and the biggest live tapings.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kids" class="kids">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--brass-soft)">For the kids</p>
+      <h2>Your Saturday could be on TV.</h2>
+      <p class="lede" style="margin-top:16px">This is a place young people will count the days to visit. Sit in the audience, get picked from the crowd, or bring your team and your talent to the stage.</p>
+      <div class="marquee-grid">
+        <div class="marquee"><div class="bulbs"><i></i><i></i><i></i><i></i><i></i></div><h3>Be a contestant</h3><p>Kids and teens compete with their families, youth groups and schools on shows made right here.</p></div>
+        <div class="marquee"><div class="bulbs"><i></i><i></i><i></i><i></i><i></i></div><h3>Show your gift</h3><p>Sing, rap, dance, act or pitch your business on Next Up Zion, with mentors and prizes for the winners.</p></div>
+        <div class="marquee"><div class="bulbs"><i></i><i></i><i></i><i></i><i></i></div><h3>Learn the business</h3><p>Internships behind the cameras: lighting, sound, editing, hosting and producing real shows.</p></div>
+        <div class="marquee"><div class="bulbs"><i></i><i></i><i></i><i></i><i></i></div><h3>Summer nights</h3><p>Fountain shows, outdoor movies on the big screen and youth concerts at the amphitheater.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shows">
+    <div class="wrap">
+      <p class="eyebrow">Original show slate</p>
+      <h2>We don't borrow the world's shows. We make our own.</h2>
+      <p class="lede" style="margin-top:16px">Every show is created and owned by our community, so the wealth from every episode stays home. Working titles below.</p>
+      <div class="table-scroll">
+        <table class="shows">
+          <thead><tr><th scope="col">Show</th><th scope="col">Format</th><th scope="col">The hook</th></tr></thead>
+          <tbody>
+            <tr><td>Know Your Word</td><td>Scripture trivia</td><td>Families race through Bible questions across rising levels. The champion family wins a scholarship or a home down-payment grant.</td></tr>
+            <tr><td>Church Clash</td><td>Church vs. church</td><td>Congregations battle in trivia, choir-offs and step challenges. The winning church takes home money for its ministry.</td></tr>
+            <tr><td>The Family Table</td><td>Family challenge</td><td>Three generations compete together in cooking, memory and teamwork rounds, celebrating the strength of the Black family.</td></tr>
+            <tr><td>Next Up Zion</td><td>Youth talent</td><td>Teens compete in music, spoken word, dance and business pitches. Winners earn mentorship and seed money.</td></tr>
+            <tr><td>Kingdom Builders</td><td>Business pitch</td><td>Local entrepreneurs pitch to a panel of Kingdom-minded investors for funding and partnership.</td></tr>
+            <tr><td>Zion After Dark</td><td>Late-night talk</td><td>Interviews, live music, comedy, and a nightly spotlight on a Stonecrest church or business.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="ownership">
+    <div class="wrap">
+      <p class="eyebrow">Who owns it</p>
+      <h2>The city builds the house. The community fills it.</h2>
+      <p class="lede" style="margin-top:16px">We create our own wealth and lead by example. Ownership is shared so every partner reaps from the harvest, and the structure stays on firm legal ground.</p>
+      <div class="own">
+        <div class="card"><span class="eyebrow">The City of Stonecrest</span><h3>Owns the venue</h3><p>Through a public-private partnership, the city owns the land, studios, plaza and amphitheater, and earns from rent, bookings, parking and visitor spending for every resident.</p></div>
+        <div class="card feature"><span class="eyebrow">Churches &amp; creators</span><h3>Own the shows</h3><p>Church partners and Kingdom producers create the shows, keep the rights and share in the revenue from streaming, sponsorships and merchandise.</p></div>
+        <div class="card"><span class="eyebrow">Local businesses</span><h3>Run the district</h3><p>Black-owned and Stonecrest-owned restaurants and operators get first priority for leases, so the jobs and profits stay in our neighborhoods.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="wrap">
+      <p class="eyebrow">The path</p>
+      <h2>From vision to ribbon cutting</h2>
+      <ol class="steps">
+        <li><div><span class="when">Now – November 2027</span><h3>Share the vision</h3><p>Bring the plan to every pastor, church and family in DeKalb County and build the coalition.</p></div></li>
+        <li><div><span class="when">2027</span><h3>Start the shows first</h3><p>Pilot the first original shows in partner churches and stream them online, proving the audience before a single wall goes up.</p></div></li>
+        <li><div><span class="when">First 100 days in office</span><h3>Study the site</h3><p>Commission a market and financing study for the land across from the Mall.</p></div></li>
+        <li><div><span class="when">Year one</span><h3>Form the partnership</h3><p>Select a development partner, bring church partners to the table, secure the land and win council approval.</p></div></li>
+        <li><div><span class="when">Years two to four</span><h3>Build and open</h3><p>Open the plaza and restaurants first, then the studios and comedy club, with the Grand Amphitheater as the capstone.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="pastors" class="invite">
+    <div class="wrap">
+      <div class="invite-box">
+        <p class="eyebrow">An invitation to the pastors of DeKalb County</p>
+        <h2>Build it with us.</h2>
+        <p class="lede">This vision belongs to the Church. We are inviting every pastor and congregation in DeKalb County to help shape it, partner in it and share in what it produces for our community.</p>
+        <div class="asks">
+          <div><b>Join the Pastoral Advisory Council</b><span>Help shape the shows, the values and the community commitments of the district.</span></div>
+          <div><b>Host a pilot taping</b><span>Open your sanctuary or fellowship hall to film one of the first original shows in 2027.</span></div>
+          <div><b>Explore partnership</b><span>Learn how churches can take part in the development and the shows as the plan takes shape.</span></div>
+          <div><b>Request a briefing</b><span>Invite King Smith to present the full vision to your leadership team or congregation.</span></div>
+        </div>
+        <div class="contact">
+          <span class="chip" id="email">admin@groovv.org</span>
+          <button class="copy" type="button" data-copy="admin@groovv.org">Copy email</button>
+          <span class="chip" id="phone">404-585-8118</span>
+          <button class="copy" type="button" data-copy="404-585-8118">Copy number</button>
+        </div>
+        <p class="status" id="copy-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>King Otis Bernard Smith Jr.</b>, candidate for Mayor of Stonecrest · Smith4Mayor.com</p>
+    <p>Zion's Black Wall Street is a campaign proposal. It is not an official project of the City of Stonecrest, and all figures are planning estimates pending a feasibility study. Illustrations are artist's concepts.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var text = btn.getAttribute('data-copy');
+    var status = document.getElementById('copy-status');
+    function done(){ status.textContent = 'Copied ' + text; }
+    function fallback(){
+      var el = btn.previousElementSibling;
+      try{ var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){}
+      status.textContent = 'Selected. Press Ctrl+C or Cmd+C to copy.';
+    }
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    }catch(e){ fallback(); }
+  });
+});
+</script>
+</body>
+</html>

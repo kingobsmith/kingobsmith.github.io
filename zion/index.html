@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Zion's Black Wall Street: King Smith's vision for Stonecrest, an entertainment district across from The Mall at Stonecrest.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zion's Black Wall Street · Pitch a Show for Stonecrest">
+<meta property="og:description" content="Pitch an original game show for Stonecrest, share it, and collect votes. The top two shows get built first.">
+<meta property="og:url" content="https://smith4mayor.com/zion/">
+<meta name="twitter:card" content="summary">
 <title>Zion's Black Wall Street</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,6 +169,64 @@ section{padding-block:clamp(56px,9vw,104px)}
 .spot-details b{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:500}
 .spot-details span{color:var(--muted);font-size:.95rem}
 .example-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;background:var(--night);color:var(--brass-soft);border:1px solid var(--brass);border-radius:999px;padding:4px 10px}
+
+/* Pitch form */
+.pitch-panel{margin-top:28px;border:1px solid var(--brass);border-radius:8px;background:var(--night);padding:clamp(20px,3.5vw,36px)}
+.pitch-panel form{display:grid;gap:14px}
+.pitch-panel fieldset{border:1px solid var(--line);border-radius:6px;padding:18px;display:grid;gap:8px;margin:0;min-width:0}
+.pitch-panel legend{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);padding:0 6px}
+.pitch-panel label{font-size:.92rem;color:var(--ivory);margin-top:6px}
+.pitch-panel input:not([type=checkbox]),.pitch-panel textarea{width:100%;background:var(--night-2);color:var(--ivory);border:1px solid var(--line);border-radius:6px;padding:11px 12px;font-family:var(--body);font-size:1rem}
+.pitch-panel input:focus,.pitch-panel textarea:focus{outline:2px solid var(--brass);outline-offset:1px;border-color:var(--brass)}
+.pitch-panel textarea{resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.two > div{display:grid;gap:8px;min-width:0}
+@media (max-width:640px){.two{grid-template-columns:1fr}}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;color:var(--ivory);margin-top:8px}
+.check input{margin-top:4px;accent-color:var(--brass);width:18px;height:18px;flex:none}
+.guardian{border-left:2px solid var(--brass);padding-left:14px;display:grid;gap:8px}
+.form-note{color:var(--muted);font-size:.9rem}
+.form-actions{display:flex;gap:12px;flex-wrap:wrap}
+.status.error{color:#f29a9a}
+
+/* Ideas gallery */
+.ideas-head{margin-top:64px;display:grid;gap:8px}
+.ideas-title{font-size:clamp(1.6rem,3.4vw,2.3rem)}
+#featured:not(:empty){margin-top:20px}
+.ideas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:20px}
+@media (max-width:400px){.ideas-grid{grid-template-columns:1fr}}
+.idea-card{border:1px solid var(--line);border-radius:8px;background:var(--night);display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;min-width:0}
+.idea-card.is-featured{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass),0 0 40px rgba(217,164,65,.18)}
+.idea-person{display:flex;gap:14px;align-items:center;padding:18px;background:radial-gradient(circle at 15% 50%,rgba(217,164,65,.25),transparent 55%),var(--oxblood);position:relative}
+.idea-photo{width:64px;height:64px;border-radius:50%;border:2px solid var(--brass-soft);background:var(--night-2);flex:none;display:grid;place-items:center;font-family:var(--display);font-size:1.6rem;color:var(--brass-soft);overflow:hidden}
+.idea-photo img{width:100%;height:100%;object-fit:cover}
+.idea-who{display:grid;gap:2px;min-width:0}
+.idea-who b{font-family:var(--display);font-size:1.15rem;overflow-wrap:anywhere}
+.idea-who span{font-size:.85rem;color:#ecd9d3;overflow-wrap:anywhere}
+.rank{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:.78rem;background:var(--night);color:var(--brass-soft);border:1px solid var(--brass);border-radius:999px;padding:3px 9px}
+.idea-body{padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.idea-body h4{font-family:var(--display);font-size:1.5rem;color:var(--brass-soft);margin:0;line-height:1.15;overflow-wrap:anywhere}
+.idea-body .pitch{font-family:var(--display);font-style:italic;font-size:1.05rem;overflow-wrap:anywhere}
+.idea-body details{border-top:1px solid var(--line);padding-top:10px}
+.idea-body summary{cursor:pointer;font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.idea-body details p{color:var(--muted);white-space:pre-line;margin-top:8px;font-size:.95rem;overflow-wrap:anywhere}
+.idea-meta{display:grid;gap:6px}
+.idea-meta div{font-size:.92rem;color:var(--muted);overflow-wrap:anywhere}
+.idea-meta b{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-right:6px}
+.idea-foot{display:flex;align-items:center;gap:10px;padding:14px 18px;border-top:1px solid var(--line);flex-wrap:wrap}
+.votes{font-family:var(--display);font-size:1.5rem;color:var(--ivory);margin-right:auto;font-variant-numeric:tabular-nums}
+.votes small{font-family:var(--body);font-size:.8rem;color:var(--muted);margin-left:4px}
+.btn.sm{padding:9px 16px;font-size:.92rem}
+.btn[disabled]{opacity:.65;cursor:default}
+
+/* Share sheet */
+.share-sheet{position:fixed;inset:0;z-index:50;background:rgba(10,7,12,.78);display:grid;place-items:center;padding:16px}
+.share-box{width:min(460px,100%);background:var(--night-2);border:1px solid var(--brass);border-radius:10px;padding:24px;display:grid;gap:14px}
+.share-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:420px){.share-grid{grid-template-columns:repeat(2,1fr)}}
+.share-btn{display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 8px;border-radius:8px;background:var(--night);border:1px solid var(--line);color:var(--ivory);text-decoration:none;font-family:var(--body);font-size:.92rem;cursor:pointer}
+.share-btn:hover{border-color:var(--brass)}
+.share-link{width:100%;background:var(--night);color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:10px;font-family:var(--mono);font-size:.82rem}
 
 footer{padding-block:40px;color:var(--muted);font-size:.88rem}
 footer .wrap{display:grid;gap:10px}
@@ -415,49 +478,134 @@ footer b{color:var(--ivory)}
       <div class="vote-head">
         <p class="eyebrow">The people's choice · Show competition</p>
         <h2>Pitch the show. Stonecrest picks the winners.</h2>
-        <p class="lede">Got an idea for a game show? A family competition, a faith challenge, a celebrity pitch battle, something nobody has seen yet? Tell us your idea and how it works. The community votes, and the top two become the first shows we plan, pilot and produce right here in Stonecrest.</p>
-      </div>
-      <ol class="steps" style="margin-top:32px">
-        <li><div><span class="when">Now through Nov. 30, 2026</span><h3>Submit your show</h3><p>Name your show, explain how it's played, who competes, and what they win. Add a sketch, a slide or a short video if you have one.</p></div></li>
-        <li><div><span class="when">December 2026</span><h3>Finalists announced</h3><p>A panel of pastors, creators and community leaders selects the strongest ideas and posts them here, credited to the people who pitched them.</p></div></li>
-        <li><div><span class="when">December 2026 – January 2027</span><h3>The community votes</h3><p>Everyone votes for their favorite finalist. The top two are announced in February 2027 and go into development first.</p></div></li>
-      </ol>
-      <div class="vote-cta">
-        <a class="btn" id="submit-link" href="SUBMIT_FORM_URL_HERE" target="_blank" rel="noopener">Submit your show idea</a>
-        <span style="color:var(--muted)">Voting opens when the finalists are posted.</span>
+        <p class="lede">Got an idea for a game show? A family competition, a faith challenge, a celebrity pitch battle, something nobody has seen yet? Pitch it here. Your idea goes live on this page, you share it with your people, and the two shows with the most votes become the first shows we develop and produce right here in Stonecrest.</p>
       </div>
 
-      <p class="eyebrow" style="margin-top:48px">How every finalist will be featured</p>
-      <article class="spotlight" aria-label="Example finalist spotlight">
-        <div class="spot-person">
-          <span class="example-tag">Example</span>
-          <div class="spot-photo" aria-hidden="true">You</div>
-          <div class="who">Your Name Here</div>
-          <div class="from">Your church or neighborhood</div>
-        </div>
-        <div class="spot-show">
-          <h3>Your Show's Title</h3>
-          <p class="pitch">Your big idea, told in one sentence that makes people want to watch.</p>
-          <div class="spot-details">
-            <div><b>How it's played</b><span>The rounds, the rules, and the moment someone wins.</span></div>
-            <div><b>Who competes</b><span>Families, kids, churches, celebrities, or anyone you dream up.</span></div>
-            <div><b>The prize</b><span>What the winners take home.</span></div>
-          </div>
-        </div>
-      </article>
-      <p class="eyebrow" style="margin-top:48px">Need inspiration? Six starter ideas</p>
-      <div class="ballot" style="margin-top:16px">
-        <div class="ballot-card"><span class="num">Show 1</span><h3>Know Your Word</h3><span class="fmt">Scripture trivia</span><p>Families race through Bible questions for scholarships and home down-payment grants.</p></div>
-        <div class="ballot-card"><span class="num">Show 2</span><h3>Church Clash</h3><span class="fmt">Church vs. church</span><p>Congregations battle in trivia, choir-offs and step challenges for ministry funds.</p></div>
-        <div class="ballot-card"><span class="num">Show 3</span><h3>The Family Table</h3><span class="fmt">Family challenge</span><p>Three generations compete together in cooking, memory and teamwork rounds.</p></div>
-        <div class="ballot-card"><span class="num">Show 4</span><h3>Next Up Zion</h3><span class="fmt">Youth talent</span><p>Teens compete in music, spoken word, dance and business pitches for mentorship and seed money.</p></div>
-        <div class="ballot-card"><span class="num">Show 5</span><h3>Kingdom Builders</h3><span class="fmt">Business pitch</span><p>Local entrepreneurs pitch Kingdom-minded investors for funding and partnership.</p></div>
-        <div class="ballot-card"><span class="num">Show 6</span><h3>Zion After Dark</h3><span class="fmt">Late-night talk</span><p>Interviews, live music, comedy and a nightly spotlight on a Stonecrest church or business.</p></div>
+      <ol class="steps" style="margin-top:32px">
+        <li><div><span class="when">Now open</span><h3>Pitch your show</h3><p>Name your show and explain how it's played, who competes and what they win.</p></div></li>
+        <li><div><span class="when">Within a day or two</span><h3>Your idea goes live</h3><p>After a quick review, your show is posted here with your name in the spotlight and its own link.</p></div></li>
+        <li><div><span class="when">Voting closes Jan. 31, 2027</span><h3>Share it and collect votes</h3><p>Send your link to family, friends and your church. The top two are announced in February 2027.</p></div></li>
+      </ol>
+
+      <div class="vote-cta">
+        <button class="btn" type="button" id="open-pitch" aria-expanded="false" aria-controls="pitch-panel">Pitch your show idea</button>
+        <a class="btn ghost" href="#ideas">See the ideas</a>
       </div>
+
+      <div id="pitch-panel" class="pitch-panel" hidden>
+        <form id="pitch-form" novalidate>
+          <h3>Pitch your show</h3>
+          <p class="form-note">Fields marked * are required. Your email or phone stays private and is never shown on the site.</p>
+
+          <fieldset>
+            <legend>Your show</legend>
+            <label for="f-title">Show name *</label>
+            <input id="f-title" name="title" maxlength="80" required placeholder="Example: Church Clash">
+            <label for="f-tagline">Your big idea in one sentence *</label>
+            <input id="f-tagline" name="tagline" maxlength="200" required placeholder="What makes people want to watch?">
+            <label for="f-how">How the game works *</label>
+            <textarea id="f-how" name="how" rows="6" maxlength="3000" required placeholder="The rounds, the rules, and how someone wins."></textarea>
+            <div class="two">
+              <div><label for="f-who">Who competes?</label><input id="f-who" name="who" maxlength="200" placeholder="Families, kids, churches, celebrities..."></div>
+              <div><label for="f-prize">What do winners take home?</label><input id="f-prize" name="prize" maxlength="200"></div>
+            </div>
+            <label for="f-media">Link to a sketch, slides or video (optional)</label>
+            <input id="f-media" name="media" type="url" maxlength="500" placeholder="https://">
+          </fieldset>
+
+          <fieldset>
+            <legend>About you</legend>
+            <div class="two">
+              <div><label for="f-name">Your name *</label><input id="f-name" name="name" maxlength="80" required autocomplete="name"></div>
+              <div><label for="f-church">Your church or neighborhood</label><input id="f-church" name="church" maxlength="120"></div>
+            </div>
+            <label for="f-contact">Email or phone (private) *</label>
+            <input id="f-contact" name="contact" maxlength="120" required autocomplete="email">
+            <label for="f-photo">Link to a photo of you for the spotlight (optional)</label>
+            <input id="f-photo" name="photo" type="url" maxlength="500" placeholder="https://">
+
+            <label class="check"><input type="checkbox" id="f-minor"> I am under 18</label>
+            <div id="guardian" class="guardian" hidden>
+              <p class="form-note">For anyone under 18, we show your first name only and never post your photo publicly.</p>
+              <div class="two">
+                <div><label for="f-gname">Parent or guardian's name *</label><input id="f-gname" maxlength="80"></div>
+                <div><label for="f-gcontact">Parent or guardian's email or phone *</label><input id="f-gcontact" maxlength="120"></div>
+              </div>
+              <label class="check"><input type="checkbox" id="f-gconsent"> My parent or guardian agrees to my entry and my first name being shown *</label>
+            </div>
+          </fieldset>
+
+          <label class="check"><input type="checkbox" id="f-agree" required> I created this idea, and I agree it may be featured, developed and credited by the Smith for Mayor campaign and its partners. *</label>
+
+          <div class="form-actions">
+            <button class="btn" type="submit" id="pitch-submit">Submit my show</button>
+            <button class="btn ghost" type="button" id="pitch-cancel">Cancel</button>
+          </div>
+          <p class="status" id="pitch-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div id="ideas" class="ideas-head">
+        <p class="eyebrow">Live leaderboard</p>
+        <h3 class="ideas-title">The community's show ideas</h3>
+        <p class="status" id="ideas-status" aria-live="polite">Loading ideas…</p>
+      </div>
+      <div id="featured"></div>
+      <div id="ideas-grid" class="ideas-grid"></div>
+
+      <div id="ideas-empty" hidden>
+        <p class="lede" style="margin-top:8px">No ideas posted yet. Be the first name in the spotlight.</p>
+        <article class="spotlight" aria-label="Example idea spotlight">
+          <div class="spot-person">
+            <span class="example-tag">Example</span>
+            <div class="spot-photo" aria-hidden="true">You</div>
+            <div class="who">Your Name Here</div>
+            <div class="from">Your church or neighborhood</div>
+          </div>
+          <div class="spot-show">
+            <h3>Your Show's Title</h3>
+            <p class="pitch">Your big idea, told in one sentence that makes people want to watch.</p>
+            <div class="spot-details">
+              <div><b>How it's played</b><span>The rounds, the rules, and the moment someone wins.</span></div>
+              <div><b>Who competes</b><span>Families, kids, churches, celebrities, or anyone you dream up.</span></div>
+              <div><b>The prize</b><span>What the winners take home.</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="eyebrow" style="margin-top:56px">Need inspiration? Six starter ideas</p>
+      <div class="ballot" style="margin-top:16px">
+        <div class="ballot-card"><span class="num">Starter 1</span><h3>Know Your Word</h3><span class="fmt">Scripture trivia</span><p>Families race through Bible questions for scholarships and home down-payment grants.</p></div>
+        <div class="ballot-card"><span class="num">Starter 2</span><h3>Church Clash</h3><span class="fmt">Church vs. church</span><p>Congregations battle in trivia, choir-offs and step challenges for ministry funds.</p></div>
+        <div class="ballot-card"><span class="num">Starter 3</span><h3>The Family Table</h3><span class="fmt">Family challenge</span><p>Three generations compete together in cooking, memory and teamwork rounds.</p></div>
+        <div class="ballot-card"><span class="num">Starter 4</span><h3>Next Up Zion</h3><span class="fmt">Youth talent</span><p>Teens compete in music, spoken word, dance and business pitches for mentorship and seed money.</p></div>
+        <div class="ballot-card"><span class="num">Starter 5</span><h3>Kingdom Builders</h3><span class="fmt">Business pitch</span><p>Local entrepreneurs pitch Kingdom-minded investors for funding and partnership.</p></div>
+        <div class="ballot-card"><span class="num">Starter 6</span><h3>Zion After Dark</h3><span class="fmt">Late-night talk</span><p>Interviews, live music, comedy and a nightly spotlight on a Stonecrest church or business.</p></div>
+      </div>
+
       <div class="vote-rules">
         <div><b>Anyone can pitch</b><span>Kids, families, churches, creators. One idea or several, all welcome.</span></div>
-        <div><b>Credit where it's due</b><span>Every finalist is credited by name to the person who pitched it.</span></div>
+        <div><b>One vote per idea</b><span>Vote for as many ideas as you like, once each.</span></div>
         <div><b>Winners go first</b><span>The top two become the first shows we develop and pilot in Stonecrest.</span></div>
+      </div>
+    </div>
+
+    <div id="share-sheet" class="share-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="share-title">
+      <div class="share-box">
+        <h3 id="share-title">Share this idea</h3>
+        <p class="form-note" id="share-sub"></p>
+        <div class="share-grid">
+          <a class="share-btn" id="sh-fb" target="_blank" rel="noopener">Facebook</a>
+          <a class="share-btn" id="sh-x" target="_blank" rel="noopener">X</a>
+          <a class="share-btn" id="sh-wa" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="share-btn" id="sh-sms">Text message</a>
+          <a class="share-btn" id="sh-mail">Email</a>
+          <button class="share-btn" type="button" id="sh-copy">Copy link</button>
+        </div>
+        <input id="sh-link" class="share-link" readonly aria-label="Link to this idea">
+        <p class="status" id="sh-status" aria-live="polite"></p>
+        <button class="btn ghost" type="button" id="sh-close">Close</button>
       </div>
     </div>
   </section>
@@ -540,6 +688,212 @@ document.querySelectorAll('.copy').forEach(function(btn){
     }catch(e){ fallback(); }
   });
 });
+</script>
+<script>
+(function(){
+  var SB_URL = 'https://elzcndwehfbhviajufvu.supabase.co';
+  var SB_KEY = 'sb_publishable_a7Thy0eVbgIoleOXYNm21g_oI06UNn4';
+  var SITE_URL = location.origin + location.pathname;
+  var ideasById = {};
+
+  function $(id){ return document.getElementById(id); }
+  function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+  function safeUrl(u){ return (typeof u === 'string' && /^https?:\/\//i.test(u.trim())) ? u.trim() : null; }
+
+  function store(key, val){
+    try{ if(val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); }catch(e){ return null; }
+  }
+  var voterKey = store('zion_voter_key');
+  if(!voterKey){
+    voterKey = (window.crypto && crypto.randomUUID) ? crypto.randomUUID().replace(/-/g,'') : (Date.now().toString(36) + Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2));
+    store('zion_voter_key', voterKey);
+  }
+  var voted = {};
+  try{ voted = JSON.parse(store('zion_voted') || '{}') || {}; }catch(e){ voted = {}; }
+  function saveVoted(){ store('zion_voted', JSON.stringify(voted)); }
+
+  function api(path, opts){
+    opts = opts || {};
+    var headers = { 'apikey': SB_KEY, 'Content-Type': 'application/json' };
+    return fetch(SB_URL + path, { method: opts.method || 'GET', headers: headers, body: opts.body ? JSON.stringify(opts.body) : undefined })
+      .then(function(r){
+        return r.text().then(function(t){
+          var data = null; try{ data = t ? JSON.parse(t) : null; }catch(e){ data = t; }
+          if(!r.ok){ var msg = (data && data.message) ? data.message : 'Something went wrong. Please try again.'; throw new Error(msg); }
+          return data;
+        });
+      });
+  }
+
+  /* ---------- Gallery ---------- */
+  function ideaLink(id){ return SITE_URL + '?idea=' + encodeURIComponent(id); }
+
+  function buildCard(idea, rank, featured){
+    var card = el('article', 'idea-card' + (featured ? ' is-featured' : ''));
+    card.id = 'idea-' + idea.id;
+
+    var person = el('div', 'idea-person');
+    var photo = el('div', 'idea-photo');
+    var p = safeUrl(idea.photo_url);
+    if(p){ var img = document.createElement('img'); img.src = p; img.alt = ''; img.loading = 'lazy'; img.referrerPolicy = 'no-referrer'; img.onerror = function(){ photo.textContent = (idea.display_name || '?').trim().charAt(0).toUpperCase(); }; photo.appendChild(img); }
+    else { photo.textContent = (idea.display_name || '?').trim().charAt(0).toUpperCase(); }
+    var who = el('div', 'idea-who');
+    who.appendChild(el('b', null, idea.display_name));
+    if(idea.church) who.appendChild(el('span', null, idea.church));
+    person.appendChild(photo); person.appendChild(who);
+    if(rank) person.appendChild(el('span', 'rank', '#' + rank));
+    card.appendChild(person);
+
+    var body = el('div', 'idea-body');
+    body.appendChild(el('h4', null, idea.show_title));
+    body.appendChild(el('p', 'pitch', idea.tagline));
+    var meta = el('div', 'idea-meta');
+    if(idea.who_competes){ var w = el('div'); w.appendChild(el('b', null, 'Who competes')); w.appendChild(document.createTextNode(idea.who_competes)); meta.appendChild(w); }
+    if(idea.prize){ var pr = el('div'); pr.appendChild(el('b', null, 'The prize')); pr.appendChild(document.createTextNode(idea.prize)); meta.appendChild(pr); }
+    if(meta.childNodes.length) body.appendChild(meta);
+    var det = document.createElement('details');
+    if(featured) det.open = true;
+    det.appendChild(el('summary', null, "How it's played"));
+    det.appendChild(el('p', null, idea.how_it_works));
+    var m = safeUrl(idea.media_url);
+    if(m){ var a = el('a', null, 'See the pitch materials'); a.href = m; a.target = '_blank'; a.rel = 'noopener nofollow ugc'; var pa = el('p'); pa.appendChild(a); det.appendChild(pa); }
+    body.appendChild(det);
+    card.appendChild(body);
+
+    var foot = el('div', 'idea-foot');
+    var votes = el('span', 'votes');
+    votes.appendChild(document.createTextNode(String(idea.vote_count || 0)));
+    votes.appendChild(el('small', null, (idea.vote_count === 1 ? 'vote' : 'votes')));
+    var vb = el('button', 'btn sm', voted[idea.id] ? 'Voted' : 'Vote');
+    vb.type = 'button';
+    if(voted[idea.id]) vb.disabled = true;
+    vb.addEventListener('click', function(){ castVote(idea, vb, votes); });
+    var sb = el('button', 'btn ghost sm', 'Share');
+    sb.type = 'button';
+    sb.addEventListener('click', function(){ openShare(idea); });
+    foot.appendChild(votes); foot.appendChild(vb); foot.appendChild(sb);
+    card.appendChild(foot);
+    return card;
+  }
+
+  function loadIdeas(){
+    var status = $('ideas-status');
+    return api('/rest/v1/show_ideas?select=id,created_at,show_title,tagline,how_it_works,who_competes,prize,media_url,display_name,church,photo_url,vote_count&order=vote_count.desc,created_at.asc')
+      .then(function(rows){
+        rows = rows || [];
+        var grid = $('ideas-grid'), feat = $('featured');
+        grid.textContent = ''; feat.textContent = '';
+        ideasById = {};
+        rows.forEach(function(r){ ideasById[r.id] = r; });
+        $('ideas-empty').hidden = rows.length > 0;
+        status.textContent = rows.length ? (rows.length + (rows.length === 1 ? ' idea' : ' ideas') + ' in the running. Ranked by votes.') : '';
+        var wanted = new URLSearchParams(location.search).get('idea');
+        rows.forEach(function(r, i){
+          if(wanted && r.id === wanted){ feat.appendChild(buildCard(r, i + 1, true)); }
+          else { grid.appendChild(buildCard(r, i + 1, false)); }
+        });
+        if(wanted && feat.firstChild){ setTimeout(function(){ feat.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 200); }
+      })
+      .catch(function(){ status.textContent = 'The ideas could not load right now. Please refresh the page in a moment.'; status.classList.add('error'); });
+  }
+
+  function castVote(idea, btn, votesEl){
+    btn.disabled = true; btn.textContent = 'Voting…';
+    api('/rest/v1/rpc/cast_vote', { method: 'POST', body: { p_idea_id: idea.id, p_voter_key: voterKey } })
+      .then(function(count){
+        voted[idea.id] = true; saveVoted();
+        idea.vote_count = count;
+        votesEl.firstChild.nodeValue = String(count);
+        votesEl.lastChild.textContent = count === 1 ? 'vote' : 'votes';
+        btn.textContent = 'Voted';
+        openShare(idea, true);
+      })
+      .catch(function(err){ btn.disabled = false; btn.textContent = 'Vote'; alertStatus($('ideas-status'), err.message); });
+  }
+
+  function alertStatus(node, msg){ node.textContent = msg; node.classList.add('error'); }
+
+  /* ---------- Share ---------- */
+  var lastFocus = null;
+  function openShare(idea, afterVote){
+    var url = ideaLink(idea.id);
+    var text = 'Vote for "' + idea.show_title + '" by ' + idea.display_name + ', a new game show idea for Stonecrest!';
+    $('share-title').textContent = afterVote ? 'Thanks for voting! Now share it.' : 'Share this idea';
+    $('share-sub').textContent = 'Every share brings "' + idea.show_title + '" more votes.';
+    $('sh-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+    $('sh-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+    $('sh-wa').href = 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url);
+    $('sh-sms').href = 'sms:?&body=' + encodeURIComponent(text + ' ' + url);
+    $('sh-mail').href = 'mailto:?subject=' + encodeURIComponent('Vote for ' + idea.show_title) + '&body=' + encodeURIComponent(text + '\n\n' + url);
+    $('sh-link').value = url;
+    $('sh-status').textContent = '';
+    $('share-sheet').dataset.text = text;
+    lastFocus = document.activeElement;
+    $('share-sheet').hidden = false;
+    $('sh-copy').focus();
+  }
+  function closeShare(){ $('share-sheet').hidden = true; if(lastFocus) try{ lastFocus.focus(); }catch(e){} }
+  $('sh-close').addEventListener('click', closeShare);
+  $('share-sheet').addEventListener('click', function(e){ if(e.target === this) closeShare(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !$('share-sheet').hidden) closeShare(); });
+  $('sh-copy').addEventListener('click', function(){
+    var link = $('sh-link');
+    function selectIt(){ link.focus(); link.select(); $('sh-status').textContent = 'Link selected. Press Ctrl+C or Cmd+C to copy.'; }
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link.value).then(function(){ $('sh-status').textContent = 'Link copied. Paste it anywhere.'; }, selectIt);
+      } else { selectIt(); }
+    }catch(e){ selectIt(); }
+  });
+
+  /* ---------- Pitch form ---------- */
+  var panel = $('pitch-panel'), openBtn = $('open-pitch');
+  openBtn.addEventListener('click', function(){
+    var show = panel.hidden;
+    panel.hidden = !show;
+    openBtn.setAttribute('aria-expanded', String(show));
+    if(show) $('f-title').focus();
+  });
+  $('pitch-cancel').addEventListener('click', function(){ panel.hidden = true; openBtn.setAttribute('aria-expanded', 'false'); openBtn.focus(); });
+  $('f-minor').addEventListener('change', function(){ $('guardian').hidden = !this.checked; });
+
+  $('pitch-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var status = $('pitch-status'); status.classList.remove('error');
+    function v(id){ return ($(id).value || '').trim(); }
+    var minor = $('f-minor').checked;
+    var problems = [];
+    if(v('f-title').length < 2) problems.push('a show name');
+    if(v('f-tagline').length < 5) problems.push('your one-sentence idea');
+    if(v('f-how').length < 20) problems.push('how the game works (at least a few sentences)');
+    if(!v('f-name')) problems.push('your name');
+    if(!v('f-contact')) problems.push('your email or phone');
+    if(minor && (!v('f-gname') || !v('f-gcontact') || !$('f-gconsent').checked)) problems.push("a parent or guardian's name, contact and consent");
+    if(!$('f-agree').checked) problems.push('your agreement to the terms');
+    if(problems.length){ alertStatus(status, 'Please add ' + problems.join(', ') + '.'); return; }
+    var media = v('f-media'), photo = v('f-photo');
+    if(media && !safeUrl(media)){ alertStatus(status, 'The sketch or video link should start with https://'); return; }
+    if(photo && !safeUrl(photo)){ alertStatus(status, 'The photo link should start with https://'); return; }
+
+    var btn = $('pitch-submit'); btn.disabled = true; btn.textContent = 'Submitting…';
+    status.textContent = '';
+    api('/rest/v1/rpc/submit_idea', { method: 'POST', body: {
+      p_show_title: v('f-title'), p_tagline: v('f-tagline'), p_how_it_works: v('f-how'),
+      p_who_competes: v('f-who'), p_prize: v('f-prize'), p_media_url: media,
+      p_full_name: v('f-name'), p_church: v('f-church'), p_contact: v('f-contact'), p_photo_url: photo,
+      p_is_minor: minor, p_guardian_name: v('f-gname'), p_guardian_contact: v('f-gcontact'),
+      p_guardian_consent: $('f-gconsent').checked, p_agreed_terms: $('f-agree').checked
+    }})
+    .then(function(){
+      $('pitch-form').reset(); $('guardian').hidden = true;
+      status.textContent = 'Thank you! Your show has been received. It will appear on this page after a quick review, usually within a day or two. Then share your link and start collecting votes.';
+    })
+    .catch(function(err){ alertStatus(status, err.message); })
+    .then(function(){ btn.disabled = false; btn.textContent = 'Submit my show'; });
+  });
+
+  loadIdeas();
+})();
 </script>
 </body>
 </html>

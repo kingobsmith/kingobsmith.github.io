@@ -132,6 +132,23 @@ section{padding-block:clamp(56px,9vw,104px)}
 .copy:hover{background:rgba(217,164,65,.12)}
 .status{font-size:.88rem;color:var(--brass-soft);min-height:1.2em}
 
+/* Vote */
+.vote{background:linear-gradient(180deg,var(--night) 0%,var(--night-2) 100%);border-top:1px solid var(--line)}
+.vote-head{display:grid;gap:14px;max-width:760px}
+.ballot{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+@media (max-width:900px){.ballot{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.ballot{grid-template-columns:1fr}}
+.ballot-card{border:1px solid var(--line);border-radius:6px;padding:20px;background:var(--night);display:grid;gap:8px;align-content:start}
+.ballot-card .num{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;color:var(--brass)}
+.ballot-card h3{font-size:1.3rem}
+.ballot-card .fmt{font-family:var(--mono);font-size:.78rem;color:var(--brass-soft)}
+.ballot-card p{color:var(--muted);font-size:.95rem}
+.vote-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.vote-rules{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;border-top:1px solid var(--line);padding-top:22px}
+.vote-rules div{display:grid;gap:4px}
+.vote-rules b{font-family:var(--display);font-size:1.1rem}
+.vote-rules span{color:var(--muted);font-size:.93rem}
+
 footer{padding-block:40px;color:var(--muted);font-size:.88rem}
 footer .wrap{display:grid;gap:10px}
 footer b{color:var(--ivory)}
@@ -146,6 +163,7 @@ footer b{color:var(--ivory)}
       <a href="#land">The Land</a>
       <a href="#district">The District</a>
       <a href="#kids">For the Kids</a>
+      <a href="#vote">Vote</a>
       <a href="#ownership">Who Owns It</a>
       <a href="#pastors">For Pastors</a>
     </nav>
@@ -372,6 +390,33 @@ footer b{color:var(--ivory)}
             <tr><td>Zion After Dark</td><td>Late-night talk</td><td>Interviews, live music, comedy, and a nightly spotlight on a Stonecrest church or business.</td></tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="vote" class="vote">
+    <div class="wrap">
+      <div class="vote-head">
+        <p class="eyebrow">The people's choice</p>
+        <h2>Pick the show. Stonecrest will build it.</h2>
+        <p class="lede">You decide which original game shows come to life first. Cast your vote, and the top two become the first shows we plan, pilot and produce right here in Stonecrest.</p>
+      </div>
+      <div class="ballot">
+        <div class="ballot-card"><span class="num">Show 1</span><h3>Know Your Word</h3><span class="fmt">Scripture trivia</span><p>Families race through Bible questions for scholarships and home down-payment grants.</p></div>
+        <div class="ballot-card"><span class="num">Show 2</span><h3>Church Clash</h3><span class="fmt">Church vs. church</span><p>Congregations battle in trivia, choir-offs and step challenges for ministry funds.</p></div>
+        <div class="ballot-card"><span class="num">Show 3</span><h3>The Family Table</h3><span class="fmt">Family challenge</span><p>Three generations compete together in cooking, memory and teamwork rounds.</p></div>
+        <div class="ballot-card"><span class="num">Show 4</span><h3>Next Up Zion</h3><span class="fmt">Youth talent</span><p>Teens compete in music, spoken word, dance and business pitches for mentorship and seed money.</p></div>
+        <div class="ballot-card"><span class="num">Show 5</span><h3>Kingdom Builders</h3><span class="fmt">Business pitch</span><p>Local entrepreneurs pitch Kingdom-minded investors for funding and partnership.</p></div>
+        <div class="ballot-card"><span class="num">Show 6</span><h3>Zion After Dark</h3><span class="fmt">Late-night talk</span><p>Interviews, live music, comedy and a nightly spotlight on a Stonecrest church or business.</p></div>
+      </div>
+      <div class="vote-cta">
+        <a class="btn" id="vote-link" href="FORM_URL_HERE" target="_blank" rel="noopener">Cast your vote</a>
+        <span style="color:var(--muted)">Have a better idea? Submit your own show on the ballot.</span>
+      </div>
+      <div class="vote-rules">
+        <div><b>One vote each</b><span>Pick your favorite show, then share the page so your family and church can vote too.</span></div>
+        <div><b>Voting closes Dec. 31, 2026</b><span>The top two shows will be announced in January 2027.</span></div>
+        <div><b>Winners go first</b><span>The top two become the first shows we develop and pilot in Stonecrest.</span></div>
       </div>
     </div>
   </section>

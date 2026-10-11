@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>King Smith for Mayor of Stonecrest — Stonecrest Strong. Kingdom First.</title>
+<title>Empowering the Church · King Smith for Mayor of Stonecrest</title>
+<meta name="description" content="Empowering the Church. King Otis Bernard Smith Jr. for Mayor of Stonecrest, Georgia — building the Model City, where the church is the heartbeat.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="King Smith for Mayor">
+<meta property="og:title" content="Empowering the Church · King Smith for Mayor of Stonecrest">
+<meta property="og:description" content="Stonecrest Strong. Kingdom First. See the vision for the Model City, where the church is the heartbeat.">
+<meta property="og:url" content="https://smith4mayor.com/">
+<meta property="og:image" content="https://smith4mayor.com/KingOBSmith.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Empowering the Church · King Smith for Mayor of Stonecrest">
+<meta name="twitter:description" content="Stonecrest Strong. Kingdom First. See the vision for the Model City, where the church is the heartbeat.">
+<meta name="twitter:image" content="https://smith4mayor.com/KingOBSmith.jpg">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -524,6 +535,18 @@
     .amount-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
+  /* VISION BUTTONS */
+  .btn-vision { box-shadow: 0 0 0 1px var(--gold-lt), 0 0 24px rgba(212,175,106,0.45); }
+  .float-vision {
+    position: fixed; left: 1rem; bottom: 1rem; z-index: 900;
+    background: var(--gold); color: var(--navy);
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em;
+    text-decoration: none; padding: 0.8rem 1.2rem; border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+  .float-vision:hover { background: var(--gold-lt); }
+
   /* CROSS SVG inline */
   .cross-svg { fill: var(--gold-lt); }
 </style>
@@ -556,7 +579,8 @@
   <p class="hero-sub">What the Vatican is to the Catholic Church — Stonecrest will become to the Black Church family. A city of faith, prestige, safety, and purpose. A blueprint every city in America will follow.</p>
   <div class="hero-cta">
     <a href="#donate" class="btn-primary">Donate to the Campaign</a>
-    <a href="#vision" class="btn-secondary">See the Vision</a>
+    <a href="/zion/" class="btn-primary btn-vision">See My Vision for Zion &rarr;</a>
+    <a href="#vision" class="btn-secondary">Read the Vision</a>
   </div>
 </section>
 
@@ -880,6 +904,8 @@
   // Smooth active nav on scroll
   const sections = document.querySelectorAll('section[id], div[id]');
 </script>
+
+<a href="/zion/" class="float-vision">See My Vision &rarr;</a>
 
 </body>
 </html>
